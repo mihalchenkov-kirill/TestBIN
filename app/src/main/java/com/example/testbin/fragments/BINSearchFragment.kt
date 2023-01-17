@@ -32,7 +32,7 @@ class BINSearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.button.setOnClickListener {
             if (binding.textInputEditText.text?.isEmpty() == true)
-                Toast.makeText(context, "Заполни", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Сначала введите BIN/IIN", Toast.LENGTH_SHORT).show()
             else {
                 requestBIN(binding.textInputEditText.text.toString().toInt())
                 updateCard()
@@ -68,7 +68,6 @@ class BINSearchFragment : Fragment() {
             url,
             { result ->
                 parseBINResult(result)
-                //Log.d("MyLog", "Result: $result")
             },
             { error ->
                 Log.d("MyLog", "Error: $error")
